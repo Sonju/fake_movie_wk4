@@ -1,4 +1,3 @@
 require './app'
 
-run sinatra-cross_origin::Application
-	
+run Sinatra::Application

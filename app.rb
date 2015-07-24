@@ -2,30 +2,23 @@ require 'bundler'
 Bundler.require()
 
 
-class fake_movie
- def initialize = (name, release_year, descprition)
-    @name = name
-    @
-  end
 
-  def name
-    @name
-  end
+def fake_movie (name, release_year, description)
+  {:name => name.to_s, :release_year => release_year.to_s, :description => description.to_s}.to_json
+end
 
-  def release_year
-    @release_year
-  end
 
-  def descprition
-    @descprition
-  end
+get '/api/Spiderman' do
+  cross_origin
+  fake_movie('Spiderman', '1980', 'spider bites a boy and he turns into a superhero')
+end
 
-  def .to_s
-    puts name + ' was released in ' + release_year + '.' + name + "is about " + descprition + '.'
-  end
+get '/api/Annie' do
+  cross_origin
+  fake_movie('Annie', '1978', 'orphan Annie is adopted by a billionaire')
+end
 
-  def '/api/Spiderman'
-    puts Spiderman = fake_movie.new ('Spiderman', '1970', 'a spider bites a boy and he becomes a superhero').to_s
-  end
-
+get '/api/Jaws' do
+  cross_origin
+  fake_movie('Jaws', '1981', 'a shark attacks a boat')
 end
